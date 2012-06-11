@@ -14,4 +14,4 @@ ln -s ~/GIT/dotfiles/vimrc ~/.vimrc
 ln -s ~/GIT/dotfiles/zshrc ~/.zshrc
 ln -s ~/GIT/dotfiles/vim ~/.vim
 
-cp ~/GIT/dotfiles/oh-my-zsh/themes/ ~/.oh-my-zsh/themes/jluostar.zsh-theme 
+cp ~/GIT/dotfiles/oh-my-zsh/themes/* ~/.oh-my-zsh/themes/
