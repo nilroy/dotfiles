@@ -32,8 +32,8 @@ inoremap jj <Esc>                   "<Esc> to jj
 let mapleader = ","                 " setting leader to , 
 
 "" Color Scheme
-colorscheme tomorrow_night   " Tomorrow Theme
-"colorscheme tomorrow-night-bright
+colorscheme Tomorrow-Night          " Tomorrow Theme
+
 
 " Disable Pylint on Save
 "let g:pymode_lint_write = 0         " python-mode
