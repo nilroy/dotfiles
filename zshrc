@@ -6,8 +6,6 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="jluostar"
-#ZSH_THEME="myusuf3"
-#ZSH_THEME="alanpeabody"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -36,6 +34,8 @@ plugins=(osx ruby git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+setopt NO_BEEP
+
 export TERM="xterm-256color"
 
 # Setup Amazon EC2 Command-Line Tools
