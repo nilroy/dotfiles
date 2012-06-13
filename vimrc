@@ -34,11 +34,18 @@ let mapleader = ","                 " setting leader to ,
 "" Color Scheme
 colorscheme Tomorrow-Night          " Tomorrow Theme
 
-set laststatus=2                    " Always show the statusline
+set laststatus=2                    " Always show the statusli
 
 " Enable fancy mode 
 let g:Powerline_symbols = 'fancy'   " Powerline
 
 " Shortcut for running ruby
 :command RR :w ! ruby
+
+" Code completion
+let g:SuperTabDefaultCompletionType = "context"
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
