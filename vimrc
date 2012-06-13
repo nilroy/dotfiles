@@ -40,7 +40,7 @@ set laststatus=2                    " Always show the statusli
 let g:Powerline_symbols = 'fancy'   " Powerline
 
 " Shortcut for running ruby
-:command RR :w ! ruby
+:command R :w ! ruby
 
 " Code completion
 let g:SuperTabDefaultCompletionType = "context"
