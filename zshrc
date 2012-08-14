@@ -39,22 +39,9 @@ setopt NO_BEEP
 export TERM="xterm-256color"
 
 # Setup Amazon EC2 Command-Line Tools
-export EC2_HOME=~/bin/ec2-api-tools
+export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 export PATH=$PATH:$EC2_HOME/bin:$AWS_RDS_HOME/bin
 export EC2_PRIVATE_KEY=`ls ~/.ec2/pk-*.pem`
 export EC2_CERT=`ls ~/.ec2/cert-*.pem`
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
-
-# Setup local gems and executables
-#export PATH=$PATH:~/.gem/ruby/1.8/bin
-
-# Setup rbenv
-export PATH=~/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
-
-# Setup Amazon S3cmd
-export PATH=$PATH:~/bin/s3cmd
-
-# MacPorts Installer addition
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export JAVA_HOME="$(/usr/libexec/java_home)"
 
