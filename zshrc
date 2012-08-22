@@ -15,7 +15,7 @@ ZSH_THEME="jluostar"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -35,8 +35,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 setopt NO_BEEP
+unsetopt correct_all
 
 export TERM="xterm-256color"
+
+# Set locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
