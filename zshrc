@@ -29,7 +29,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx ruby rbenv git vagrant)
+plugins=(osx ruby rbenv git vagrant sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -44,8 +44,21 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Setup Amazon EC2 Command-Line Tools
-export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-export EC2_PRIVATE_KEY=`ls ~/.ec2/pk-*.pem`
-export EC2_CERT=`ls ~/.ec2/cert-*.pem`
 export JAVA_HOME="$(/usr/libexec/java_home)"
+export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 
+# IAM & ELB tools
+export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/libexec"
+export AWS_CREDENTIAL_FILE=$HOME/.aws-credentials-master
+export AWS_ELB_HOME="/usr/local/Library/LinkedKegs/elb-tools/jars"
+
+# Play Framework
+export PATH=$PATH:~/bin/play
+
+# Python tools installed with pip
+export PATH=$PATH:/usr/local/share/python
+
+# Shortcut for restarting audio
+alias kill_audio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' |awk '{print $1}'`"
