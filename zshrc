@@ -29,7 +29,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx ruby rbenv git vagrant sublime)
+plugins=(osx ruby rbenv git vagrant docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,7 +45,7 @@ export LANG=en_US.UTF-8
 
 # Setup Amazon EC2 Command-Line Tools
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.13.0/libexec"
 export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
 export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 
@@ -59,6 +59,19 @@ export PATH=$PATH:~/bin/play
 
 # Python tools installed with pip
 export PATH=$PATH:/usr/local/share/python
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+
+# Packer
+#export PATH=$PATH:~/bin/packer
 
 # Shortcut for restarting audio
 alias kill_audio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' |awk '{print $1}'`"
+
+# boot2docker
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/jani/.boot2docker/certs/boot2docker-vm
+
+alias docker-mongo="docker run --rm -it --link=playcart_mongodb_1:mongodb registry.nos.to/devel/mongodb mongo --host mongodb"
+alias docker-cassandra-cli="docker run --rm -it --link=playcart_cassandra_1:cassandra registry.nos.to/devel/cassandra:1.2 cassandra-cli -h cassandra"
+
