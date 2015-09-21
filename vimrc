@@ -1,6 +1,9 @@
 call pathogen#runtime_append_all_bundles()  " adding pathogen to vimrc
 call pathogen#helptags()
 
+"" Powerline
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+
 set number
 set nocompatible                    " choose no compatibility with legacy vi
 syntax enable
@@ -37,6 +40,7 @@ colorscheme Tomorrow-Night          " Tomorrow Theme
 set laststatus=2                    " Always show the statusli
 
 " Enable fancy mode 
+set guifont=Sauce\ Code\ Powerline:h12
 let g:Powerline_symbols = 'fancy'   " Powerline
 
 " Shortcut for running ruby
@@ -50,3 +54,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 let g:tagbar_usearrows = 1
+
+
+
